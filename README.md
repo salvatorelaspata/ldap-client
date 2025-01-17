@@ -12,6 +12,19 @@ To start a local LDAP server, you can use the following docker-compose file:
 docker compose up -d
 ```
 
+open `http://localhost:8080` in your browser and login with the following credentials:
+
+- User: `cn=admin,dc=example,dc=com`
+- Password: `admin`
+
+after you can upload the mock data from the `test-users.ldif` file.
+
+```bash
+ldapadd -x -D "cn=admin,dc=example,dc=com" -w admin -f test-users.ldif
+```
+
+or from the web interface.
+
 ## Usage
 
 ```javascript
